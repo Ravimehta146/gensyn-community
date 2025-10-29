@@ -1,0 +1,127 @@
+import React from "react";
+import { motion } from "framer-motion";
+import { Link } from "react-scroll";
+
+export default function GensynCommunity() {
+  return (
+    <div className="min-h-screen bg-black text-white font-sans">
+      {/* Navbar */}
+      <header className="flex justify-between items-center px-10 py-6 border-b border-red-600 bg-black/80 sticky top-0 z-50">
+        <div className="flex items-center gap-2">
+          <div className="text-2xl font-bold text-red-500">G</div>
+          <h1 className="text-lg font-semibold">Gensyn Community</h1>
+        </div>
+        <nav className="hidden md:flex gap-8 text-sm">
+          <Link to="home" smooth duration={500} className="cursor-pointer hover:text-red-400">Home</Link>
+          <Link to="about" smooth duration={500} className="cursor-pointer hover:text-red-400">About</Link>
+          <Link to="guides" smooth duration={500} className="cursor-pointer hover:text-red-400">Guides</Link>
+          <Link to="dashboard" smooth duration={500} className="cursor-pointer hover:text-red-400">Dashboard</Link>
+          <Link to="community" smooth duration={500} className="cursor-pointer hover:text-red-400">Community</Link>
+        </nav>
+        <button className="bg-red-600 px-4 py-2 rounded-lg hover:bg-red-700 transition-all">Get Involved</button>
+      </header>
+
+      {/* Hero Section */}
+      <section id="home" className="flex flex-col md:flex-row items-center justify-between px-10 py-20">
+        <div className="max-w-lg space-y-6">
+          <h2 className="text-4xl md:text-5xl font-bold leading-tight">
+            Welcome to the Gensyn Community
+          </h2>
+          <p className="text-gray-400 text-lg">
+            A place to connect, learn, and build the Gensyn ecosystem together.
+          </p>
+
+          <div className="flex gap-4">
+            <Link
+              to="guides"
+              smooth
+              duration={500}
+              className="bg-red-600 px-5 py-2 rounded-lg font-medium cursor-pointer hover:bg-red-700 transition"
+            >
+              Explore Guides
+            </Link>
+            <button className="border border-gray-500 px-5 py-2 rounded-lg hover:border-red-500 transition">
+              Watch a Video
+            </button>
+          </div>
+
+          <div className="flex gap-10 pt-6">
+            <div>
+              <h3 className="text-2xl font-bold">500+</h3>
+              <p className="text-gray-400 text-sm">Members Active Weekly</p>
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold">120+</h3>
+              <p className="text-gray-400 text-sm">Tutorials Shared</p>
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold">30+</h3>
+              <p className="text-gray-400 text-sm">Open Source Contributions</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Ant / Mascot Image */}
+        <motion.img
+          src="https://cdn.openai.com/labs/images/ant.png"
+          alt="Gensyn Mascot"
+          className="w-72 mt-10 md:mt-0 md:w-80"
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+        />
+      </section>
+
+      {/* About Section */}
+      <section id="about" className="px-10 py-20 bg-neutral-950">
+        <h2 className="text-3xl font-semibold mb-6">About Gensyn</h2>
+        <p className="text-gray-400 max-w-3xl">
+          Gensyn Community is a hub for developers, contributors, and enthusiasts to collaborate,
+          learn, and share insights about the decentralized AI ecosystem. Stay updated, access
+          technical guides, and contribute to the growing network.
+        </p>
+      </section>
+
+      {/* Guides Section */}
+      <section id="guides" className="px-10 py-20 bg-neutral-900">
+        <h2 className="text-3xl font-semibold mb-6">Guides</h2>
+        <ul className="text-gray-300 space-y-3">
+          <li>🧠 Getting Started with Gensyn</li>
+          <li>⚙️ Node Setup & Swarm Configuration</li>
+          <li>💰 Earning Points and Rewards</li>
+          <li>📊 Dashboard Usage Guide</li>
+        </ul>
+      </section>
+
+      {/* Dashboard Section */}
+      <section id="dashboard" className="px-10 py-20 bg-neutral-950">
+        <h2 className="text-3xl font-semibold mb-6">Dashboard</h2>
+        <p className="text-gray-400">
+          Track your performance, monitor node activity, and explore ecosystem stats in real time.
+          The dashboard gives you everything you need to stay informed and productive.
+        </p>
+      </section>
+
+      {/* Community Section */}
+      <section id="community" className="px-10 py-20 bg-neutral-900">
+        <h2 className="text-3xl font-semibold mb-6">Community</h2>
+        <p className="text-gray-400 mb-6">
+          Join other builders on Discord, share your ideas, and grow together with contributors across the globe.
+        </p>
+        <div className="flex gap-4">
+          <button className="bg-red-600 px-5 py-2 rounded-lg hover:bg-red-700 transition">
+            Join Discord
+          </button>
+          <button className="border border-gray-500 px-5 py-2 rounded-lg hover:border-red-500 transition">
+            Visit Forum
+          </button>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="text-center py-10 border-t border-neutral-800 text-gray-500 text-sm">
+        © 2025 Gensyn Community. Built for contributors, by contributors.
+      </footer>
+    </div>
+  );
+}
